@@ -48,6 +48,11 @@ background
     </div>
     <br>
     <button type="button" onclick="changebutton(this)">Switch it Up</button>
+    <button type="button" onclick="AJACKSON()">My first file</button>
+    <br>
+    <div id="txt">
+    <p>To change</p>
+    </div>
     <script>
         function ALERT() {
           window.alert("Make Sure You are Blast Proof");
@@ -78,6 +83,16 @@ background
     <script>
         function changebutton(elem) {
             elem.innerHTML = "AYYYYYY";
+        }
+    </script>
+    <script>
+        function AJACKSON() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("txt").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "helloworld.txt");
+        xhttp.send();
         }
     </script>
 </body>
