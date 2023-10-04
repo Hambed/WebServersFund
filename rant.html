@@ -4,8 +4,16 @@
         <title>Hambed's Sermon</title>
     </head>
     <body style="background-color:black;">
+        <button type="button" onclick="changecolor()">Intriguing Button</button>
+        <p id="tochange"></p>
         <h1 style="color:#9e029e; font-size: xxx-large; font-family: garamond;">To be Contondered</h1>
         <br>
         <img src="To_be_contondered.jpg" alt="To_be_contondered">
+        <script>
+            function changecolor() {
+            document.getElementById('tochange').innerHTML = "Stay Classy";
+            document.getElementById('tochange').style.color = "#9e029e";
+        }
+        </script>
     </body>
 </html>
