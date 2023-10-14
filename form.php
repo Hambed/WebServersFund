@@ -30,9 +30,6 @@
     <?php } else{ ?>
         <?php echo"it's fucking incredible that someone in your state can move a mouse and read a form because you're so drunk you're bouta die. "; ?>
         <?php } ?>
-    <br>
-    <?php echo"$_POST['Reflection'] "; ?>
-    <br>
 </div>
 </body>
 </html>
