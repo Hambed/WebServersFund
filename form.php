@@ -33,7 +33,6 @@
     <br>
     <?php echo"$_POST['Reflection'] "; ?>
     <br>
-    <p>Jeez if I though you were sober enough to reflect that much I would have never asked</p>
 </div>
 </body>
 </html>
