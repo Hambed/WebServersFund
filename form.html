@@ -10,7 +10,7 @@
     <legend>Your Precious Data:</legend>
 
     <label for="truthness">IS YOU FOR REAL RIGHT NOW</label><br>
-    <input type="checkbox" id="truthness" name="truthness" value="Truthful" onblur="important()"><br>
+    <input type="checkbox" id="truthness" name="truthness" value="Truthful" onclick="handleClick()" onblur="important()"><br>
     <p id="invisi" style="display:none">This field is required!</p>
     <br>
     <label for="dogname">Your great-grandma's second cousin's niece's bestfriend's dog's middle name:</label><br>
@@ -57,6 +57,9 @@
 <script>
   function important() {
     document.getElementById('invisi').style.display='block';
+  }
+  function handleClick(cb) {
+    cb.value = cb.checked ? Truthful : UnTruthful;
   }
 </script>
 </body>
