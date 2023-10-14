@@ -3,7 +3,7 @@
 <style>
     .DivMessage {
         border: 1px outset rgb(0, 13, 88);
-        background-color: rgb(19, 100, 24);
+        background-color: rgb(19, 40, 24);
         text-align: left;
     }
 </style>
@@ -20,6 +20,7 @@
     <?php } else { ?>
         <?php echo"You are UnTruthful, "; ?>
     <?php } ?>
+    <?php echo"your great-grandma's second cousin's niece's bestfriend's dog's middle name is $_POST["dogname"] (Quite the doggy) "; ?>
 </div>
 </body>
 </html>
