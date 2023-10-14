@@ -31,7 +31,7 @@
         <?php echo"it's fucking incredible that someone in your state can move a mouse and read a form because you're so drunk you're bouta die. "; ?>
         <?php } ?>
     <?php echo"\r\n"; ?>
-    <?php echo"$_POST["Reflection"] "; ?>
+    <?php echo"{$_POST["Reflection"]} "; ?>
     <?php echo"\r\n"; ?>
     <?php echo"Jeez if I though you were sober enough to reflect that much I would have never asked."; ?>
 </div>
