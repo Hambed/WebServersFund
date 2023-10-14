@@ -3,7 +3,7 @@
 <style>
     .DivMessage {
         border: 1px outset rgb(0, 13, 88);
-        background-color: rgb(70, 40, 24);
+        background-color: rgb(255, 0, 255);
         text-align: left;
     }
 </style>
@@ -20,7 +20,11 @@
     <?php } else { ?>
         <?php echo"You are UnTruthful, "; ?>
     <?php } ?>
-    <?php echo"your great-grandma's second cousin's niece's bestfriend's dog's middle name is " . $_POST["dogname"] . "(Quite the doggy) "; ?>
+    <?php echo"your great-grandma's second cousin's niece's bestfriend's dog's middle name is " . $_POST["dogname"] . " (Quite the doggy). "; ?>
+    <?php echo"Your driving instructor's great-aunt has a " . $_POST["wigcolor"] . " wig and "; ?>
+   
+    <?php if(($_POST["BAC"] >= 1) && ($_POST["BAC"] < 4)) { ?>
+        <?php echo"test"; ?>
 </div>
 </body>
 </html>
