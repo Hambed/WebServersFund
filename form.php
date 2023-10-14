@@ -24,12 +24,16 @@
     <?php echo"Your driving instructor's great-aunt has a " . $_POST["wigcolor"] . " wig and "; ?>
    
     <?php if($_POST["BAC"] >= 1 && $_POST["BAC"] < 4) { ?>
-        <?php echo"test, alright"; ?>
+        <?php echo"for someone who knows their great-grandma's second cousin's niece's bestfriend's dog's middle name, I'm surprised you drink alcohol. "; ?>
     <?php } elseif ($_POST["BAC"] >= 4 && $_POST["BAC"] < 7) { ?>
-        <?php echo"test, drunk af"; ?>
+        <?php echo"I wonder if that driving instructor whose great-aunt you love so dearly would teach you to drive drunk so you can go home to crash. "; ?>
     <?php } else{ ?>
-        <?php echo"bouta die ffs"; ?>
+        <?php echo"it's fucking incredible that someone in your state can move a mouse and read a form because you're so drunk you're bouta die. "; ?>
         <?php } ?>
+    <br>
+    <?php echo"$_POST['Reflection'] "; ?>
+    <br>
+    <p>Jeez if I though you were sober enough to reflect that much I would have never asked</p>
 </div>
 </body>
 </html>
