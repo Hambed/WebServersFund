@@ -20,7 +20,7 @@
     <?php } else { ?>
         <?php echo"You are UnTruthful, "; ?>
     <?php } ?>
-    <?php echo"your great-grandma's second cousin's niece's bestfriend's dog's middle name is $_POST['dogname'] (Quite the doggy) "; ?>
+    
 </div>
 </body>
 </html>
