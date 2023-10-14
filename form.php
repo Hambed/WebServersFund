@@ -15,8 +15,11 @@
 <br><br>
 <h1 style="color:#9e029e; font-size: large; font-family: garamond;">HERE YOU GO</h1>
 <div class="DivMessage">
-    <p style="color:#ffffff; font-size: x-large; font-family: garamond;"><?= var_dump($_GET) ?></p>
-    <p style="color:#ffffff; font-size: x-large; font-family: garamond;"><?= var_dump($_POST) ?></p>
+    <?php if($_POST["truthness"]==true) { ?>
+        <?php echo"You are Truthful, "; ?>
+    <?php } else { ?>
+        <?php echo"You are UnTruthful, "; ?>
+    <?php } ?>
 </div>
 </body>
 </html>
