@@ -23,8 +23,13 @@
     <?php echo"your great-grandma's second cousin's niece's bestfriend's dog's middle name is " . $_POST["dogname"] . " (Quite the doggy). "; ?>
     <?php echo"Your driving instructor's great-aunt has a " . $_POST["wigcolor"] . " wig and "; ?>
    
-    <?php if(($_POST["BAC"] >= 1) && ($_POST["BAC"] < 4)) { ?>
-        <?php echo"test"; ?>
+    <?php if($_POST["BAC"] >= 1 && $_POST["BAC"] < 4) { ?>
+        <?php echo"test, alright"; ?>
+    <?php } elseif ($_POST["BAC"] >= 4 && $_POST["BAC"] < 7) { ?>
+        <?php echo"test, drunk af"; ?>
+    <?php } else{ ?>
+        <?php echo"bouta die ffs"; ?>
+        <?php } ?>
 </div>
 </body>
 </html>
