@@ -16,7 +16,27 @@
     <label for="dogname">Your great-grandma's second cousin's niece's bestfriend's dog's middle name:</label><br>
     <input type="text" id="dogname" name="dogname" value=""><br>
     <label for="wigcolor">Your driving instructor's great-aunt's wig color:</label><br>
-    <input type="text" id="wigcolor" name="wigcolor" value=""><br><br>
+    <input type="text" id="wigcolor" name="wigcolor" value=""><br>
+    <label for="realname">Your First Name:</label><br>
+    <input type="text" id="realname" name="realname" value=""><br>
+    <label for="Age">Your Age:</label><br>
+    <input type="text" id="Age" name="Age" value="18-100">
+
+    <script>
+      function validateAge() {
+          var ageInput = document.getElementById("Age");
+          var age = parseInt(ageInput.value);
+
+          if (isNaN(age) || age < 18 || age > 100) {
+              alert("Please enter a valid age between 18 and 100.");
+              ageInput.value = "";
+              return false;
+          }
+
+          return true;
+      }
+    </script>
+    <br><br>
 
     <p style="color:#9e029e; font-size: large; font-family: garamond;">How drunk are you?</p><br><br>
 
