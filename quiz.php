@@ -73,15 +73,20 @@
   </fieldset>
 </form>
 
-<?php if (isset($_POST["Age"])) { ?>
-    <?php $age = intval($_POST["Age"]); ?>
-    <?php if ($age >= 18 && $age <= 100) { ?>
-      <?php echo "Age is valid: $age"; ?>
-    <?php } else { ?>
-      <?php echo "Invalid age entered. Please enter a valid age between 18 and 100."; } ?>
-  <?php } else { ?>
-    <?php echo "Age not provided."; ?>
-  <?php } ?>
+<?php 
+if (isset($_POST["Age"])) {
+     $age = intval($_POST["Age"]); 
+     if ($age >= 18 && $age <= 100) { 
+       echo "Age is valid: $age";
+     } 
+     else {
+       echo "Invalid age entered. Please enter a valid age between 18 and 100."; 
+      }
+} 
+else {
+     echo "Age not provided.";
+  } 
+?>
 
 <?php
     if (isset($_POST["realname"])) {
