@@ -68,7 +68,7 @@ if(isset($_POST["formpage"])) {
 else {
   $formpage = "nonSeriousResponse.php";
 }
-echo "Form Page Value: " . $_POST["BAC"] . "<br>";
+echo "Form Page Value: " . $_POST["formpage"] . "<br>";
 echo "Selected Page: " . $formpage . "<br>";
 ?>
     <input type="submit">
