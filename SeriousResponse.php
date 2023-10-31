@@ -15,23 +15,96 @@
 <br><br>
 <h1 style="color:#9e029e; font-size: large; font-family: garamond;">HERE YOU GO</h1>
 <div class="DivMessage">
-    <?php if($_POST["truthness"]==true) { ?>
-        <?php echo"You are Truthful, "; ?>
-    <?php } else { ?>
-        <?php echo"You are UnTruthful, "; ?>
-    <?php } ?>
-    <?php echo"your great-grandma's second cousin's niece's bestfriend's dog's middle name is " . $_POST["dogname"] . " (Quite the doggy). "; ?>
-    <?php echo"Your driving instructor's great-aunt has a " . $_POST["wigcolor"] . " wig and "; ?>
-   
-    <?php if($_POST["BAC"] >= 1 && $_POST["BAC"] < 4) { ?>
-        <?php echo"for someone who knows their great-grandma's second cousin's niece's bestfriend's dog's middle name, I'm surprised you drink alcohol. "; ?>
-    <?php } elseif ($_POST["BAC"] >= 4 && $_POST["BAC"] < 7) { ?>
-        <?php echo"I wonder if that driving instructor whose great-aunt you love so dearly would teach you to drive drunk so you can go home to crash. "; ?>
-    <?php } else{ ?>
-        <?php echo"it's fucking incredible that someone in your state can move a mouse and read a form because you're so drunk you're bouta die. "; ?>
-        <?php } ?>
-    <?php echo"<br>{$_POST["Reflection"]}. "; ?>
-    <?php echo"<br>Jeez if I thought you were sober enough to reflect that much I would have never asked."; ?>
-</div>
+<p>
+<?php
+    if (isset($_POST["realname"])) {
+        $realname = $_POST["realname"];
+
+        if (strpos($realname, ' ') === false) {
+            // No spaces found in the input string
+            echo "The input string does not contain any spaces.";
+        } else {
+            // Spaces found in the input string
+            echo "The input string contains spaces.";
+        }
+    }
+    else {
+        echo "Input string not provided.";
+    }
+?>
+
+<?php 
+    if (isset($_POST["Age"])) {
+        $age = intval($_POST["Age"]); 
+        if ($age >= 18 && $age <= 100) { 
+        echo "Age is valid: $age";
+        } 
+        else {
+        echo "Invalid age entered. Please enter a valid age between 18 and 100."; 
+        }
+    } 
+    else {
+        echo "Age not provided.";
+    } 
+?>
+
+<?php
+    if (isset($_POST["BAC"])) {
+        $BAC = intval($_POST["BAC"]);
+
+        switch ($BAC) {
+          case 1:
+           
+            break;
+          case 2:
+           
+            break;
+          case 3:
+           
+            break;
+          case 4:
+           
+            break;
+          case 5:
+           
+            break;
+          case 6:
+           
+            break;
+          case 7:
+           
+            break;
+          case 8:
+           
+            break;
+          case 9:
+           
+            break;
+          default:
+            echo "Not Valid Answer";
+        }
+    }
+    else {
+      echo "No Answer Provided";
+    }
+?>
+
+<?php
+    if (isset($_POST["beverage"])) {
+        $beverage = $_POST["beverage"];
+
+        if (strpos($beverage, ' ') === false) {
+            // No spaces found in the input string
+            echo "The input string does not contain any spaces.";
+        } else {
+            // Spaces found in the input string
+            echo "The input string contains spaces.";
+        }
+    }
+    else {
+        echo "Input string not provided.";
+    }
+?>
+</p>
 </body>
 </html>
