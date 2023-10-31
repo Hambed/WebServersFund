@@ -154,13 +154,13 @@ else {
 </script>
 <script>
     var formpageCheckbox = document.getElementById("formpage");
-    var formActionField = document.querySelector("form");
+    var formElement = document.querySelector("form");
 
     formpageCheckbox.addEventListener("change", function() {
         if (formpageCheckbox.checked) {
-            form.action = "SeriousResponse.php";
+            formElement.action = "SeriousResponse.php";
         } else {
-            form.action = "nonSeriousResponse.php";
+            formElement.action = "nonSeriousResponse.php";
         }
     });
 </script>
