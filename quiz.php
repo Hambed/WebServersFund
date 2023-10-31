@@ -66,11 +66,12 @@ if(isset($_POST["formpage"])) {
     }
     else {
          $formpage = "nonSeriousResponse.php";
- }
-else {
+    }
+  }
+  else {
     $formpage = "nonSeriousResponse.php";
  }
-}
+
 ?>
     <input type="submit">
   </fieldset>
