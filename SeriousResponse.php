@@ -31,51 +31,66 @@ if (!$conn) {
 if (isset($_POST["realname"])) {
     $realname = $_POST["realname"];
 
-    if (strpos($realname, ' ') === false) {
+    if (preg_match("/^[A-Za-z]+$/", $realname)) {
+        // Sanitize
+        $realname = trim($realname);
+        
         if (isset($_POST["BAC"])) {
-            $BAC = intval($_POST["BAC"]);
-    
-            switch ($BAC) {
-                case 1:
-                    $BACFLOAT = 0.030;
-                    break;
-                case 2:
-                    $BACFLOAT = 0.050;
-                    break;
-                case 3:
-                    $BACFLOAT = 0.080;
-                    break;
-                case 4:
-                    $BACFLOAT = 0.115;
-                    break;
-                case 5:
-                    $BACFLOAT = 0.145;
-                    break;
-                case 6:
-                    $BACFLOAT = 0.180;
-                    break;
-                case 7:
-                    $BACFLOAT = 0.225;
-                    break;
-                case 8:
-                    $BACFLOAT = 0.275;
-                    break;
-                case 9:
-                    $BACFLOAT = 0.400;
-                    break;
-                default:
-                    echo "Not Valid Answer";
-            }
+            $BAC = $_POST["BAC"];
 
-            if (isset($_POST["Age"])) {
-                $age = intval($_POST["Age"]);
-                if ($age >= 18 && $age <= 100) {
-                    if (isset($_POST["beverage"])) {
-                        $beverage = $_POST["beverage"];
+            if (is_numeric($BAC)) {
+                // Sanitize: Type-cast to float
+                $BAC = (float)$BAC;
 
-                        if (strpos($beverage, ' ') === false) {
-                            $sql = "INSERT INTO AlcoholicList (Name, BAC, Age, FavoriteBeverage) VALUES ('$realname', $BACFLOAT, $age, '$beverage')";
-                            mysqli_query($conn, $sql);
+                switch ($BAC) {
+                    case 1:
+                        $BACFLOAT = 0.030;
+                        break;
+                    case 2:
+                        $BACFLOAT = 0.050;
+                        break;
+                    case 3:
+                        $BACFLOAT = 0.080;
+                        break;
+                    case 4:
+                        $BACFLOAT = 0.115;
+                        break;
+                    case 5:
+                        $BACFLOAT = 0.145;
+                        break;
+                    case 6:
+                        $BACFLOAT = 0.180;
+                        break;
+                    case 7:
+                        $BACFLOAT = 0.225;
+                        break;
+                    case 8:
+                        $BACFLOAT = 0.275;
+                        break;
+                    case 9:
+                        $BACFLOAT = 0.400;
+                        break;
+                    default:
+                        echo "Not Valid Answer";
+                }
+
+                if (isset($_POST["Age"])) {
+                    $age = $_POST["Age"];
+                    // Validate Age
+                    if (ctype_digit($age) && $age >= 18 && $age <= 100) {
+                        // Sanitize
+                        $age = (int)$age;
+
+                        if (isset($_POST["beverage"])) {
+                            $beverage = $_POST["beverage"];
+                            // Validate Favorite Beverage
+                            if (preg_match("/^[A-Za-z]+$/", $beverage) && !preg_match("/\s/", $beverage)) {
+                                // Sanitize: Trim any leading/trailing whitespace
+                                $beverage = trim($beverage);
+                                
+                                $sql = "INSERT INTO AlcoholicList (Name, BAC, Age, FavoriteBeverage) VALUES ('$realname', $BACFLOAT, $age, '$beverage')";
+                                mysqli_query($conn, $sql);
+                            }
                         }
                     }
                 }
@@ -88,7 +103,7 @@ echo "<br><br>";
 $sql = "SELECT * FROM AlcoholicList WHERE Name = '$realname'";
 $result = mysqli_query($conn, $sql);
 foreach ($result as $row) {
-    echo "id: {$row["id"]}&nbsp Name: {$row["Name"]}&nbsp BAC: {$row["BAC"]}&nbsp Age: {$row["Age"]}&nbsp Favorite Beverage {$row["FavoriteBeverage"]}<br>";
+    echo "&nbpsid: {$row["id"]}&nbsp Name: {$row["Name"]}&nbsp BAC: {$row["BAC"]}&nbsp Age: {$row["Age"]}&nbsp Favorite Beverage {$row["FavoriteBeverage"]}<br>";
 }
 
 ?>
