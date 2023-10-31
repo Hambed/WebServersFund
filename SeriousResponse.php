@@ -87,7 +87,7 @@ if (isset($_POST["realname"])) {
                             if (preg_match("/^[A-Za-z]+$/", $beverage) && !preg_match("/\s/", $beverage)) {
                                 // Sanitize: Trim any leading/trailing whitespace
                                 $beverage = trim($beverage);
-                                
+
                                 $sql = "INSERT INTO AlcoholicList (Name, BAC, Age, FavoriteBeverage) VALUES ('$realname', $BACFLOAT, $age, '$beverage')";
                                 mysqli_query($conn, $sql);
                             }
@@ -103,7 +103,7 @@ echo "<br><br>";
 $sql = "SELECT * FROM AlcoholicList WHERE Name = '$realname'";
 $result = mysqli_query($conn, $sql);
 foreach ($result as $row) {
-    echo "&nbpsid: {$row["id"]}&nbsp Name: {$row["Name"]}&nbsp BAC: {$row["BAC"]}&nbsp Age: {$row["Age"]}&nbsp Favorite Beverage {$row["FavoriteBeverage"]}<br>";
+    echo "&nbps;id: {$row["id"]}&nbsp Name: {$row["Name"]}&nbsp BAC: {$row["BAC"]}&nbsp Age: {$row["Age"]}&nbsp Favorite Beverage {$row["FavoriteBeverage"]}<br>";
 }
 
 ?>
