@@ -30,10 +30,10 @@
     <?php } else{ ?>
         <?php echo"it's fucking incredible that someone in your state can move a mouse and read a form because you're so drunk you're bouta die. "; ?>
         <?php } ?>
-    <?php echo"\n{$_POST["Reflection"]}. "; ?>
-    <?php echo"\nJeez if I thought you were sober enough to reflect that much I would have never asked."; ?>
-    <?php echo"\n\n\nForm Page Value: " . $_POST["formpage"] . ""; ?>
-    <?php echo "Selected Page: " . $formpage . "<br>"; ?>
+    <?php echo"<br>{$_POST["Reflection"]}. "; ?>
+    <?php echo"<br>Jeez if I thought you were sober enough to reflect that much I would have never asked."; ?>
+    <?php echo"Form Page Value: " . $_POST["formpage"] . "<br>"; ?>
+    <?php echo "Selected Page: " . $formpage . ""; ?>
 </div>
 </body>
 </html>
