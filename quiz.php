@@ -59,7 +59,7 @@
     <label for="formpage">Check the box if you are Serious... Like really Serious.</label><br>
     <input type="checkbox" id="formpage" name="formpage" value="Serious"><br>
 <?php 
-if(isset($_POST["formtype"])) {
+if(isset($_POST["formpage"])) {
     if($_POST["formpage"] == "Serious")
         $formpage = "SeriousResponse.php";
     else
