@@ -32,7 +32,6 @@
         <?php } ?>
     <?php echo"<br>{$_POST["Reflection"]}. "; ?>
     <?php echo"<br>Jeez if I thought you were sober enough to reflect that much I would have never asked."; ?>
-    <?php "      $_SESSION["formpage"]"?>
 </div>
 </body>
 </html>

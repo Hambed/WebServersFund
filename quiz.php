@@ -61,12 +61,12 @@
 <?php 
 if(isset($_POST["formpage"])) {
     if($_POST["formpage"] == "Serious")
-        $_SESSION["formpage"] = "SeriousResponse.php";
+        $formpage = "SeriousResponse.php";
     else
-        $_SESSION["formpage"] = "FUCKFUCK";
+        $formpage = "nonSeriousResponse.php";
 }
 else {
-  $_SESSION["formpage"] = "FUCK";
+    $formpage = "nonSeriousResponse.php";
 }
 ?>
     <input type="submit">
