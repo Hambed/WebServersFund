@@ -60,9 +60,9 @@
     <input type="checkbox" id="formpage" name="formpage" value="Serious"><br>
 
 <?php if(isset($_POST["formpage"])) { ?>
-    <?phpif($_POST["formpage"] == "Serious") ?>
+    <?phpif($_POST["formpage"] == "Serious") { ?>
         <?php $formpage = "SeriousResponse.php"; ?>
-    <?php else ?>
+    <?php } else {?>
         <?php $formpage = "nonSeriousResponse.php"; ?>
 <?php } ?>
 <?php else { ?>
