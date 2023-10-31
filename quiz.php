@@ -10,6 +10,7 @@
     <legend>Your Precious Data:</legend>
 
     <label for="truthness">IS YOU FOR REAL RIGHT NOW</label><br>
+    <?php $formpage = "nonSeriousResponse.php"; ?>
     <input type="checkbox" id="truthness" name="truthness" value="Truthful" onblur="important()"><br>
     <p id="invisi" style="display:none">This field is required!</p>
     <br>
