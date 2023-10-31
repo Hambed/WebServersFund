@@ -5,7 +5,7 @@
 </head>
 <body style="background-color:black;">
     <h1 style="color:#9e029e; font-size: xxx-large; font-family: garamond;">Swear Down you tell truth</h1>
-    <?php $formpage = "nonSeriousResponse.php"; ?>
+    <?php $formpage = "SeriousResponse.php"; ?>
 <form action="<?php echo "$formpage"; ?>" method="POST" style="background-color: rgb(45, 189, 117);" onsubmit="return validateAge();">
   <fieldset>
     <legend>Your Precious Data:</legend>
