@@ -22,20 +22,16 @@
     <label for="Age">Your Age:</label><br>
     <input type="text" id="Age" name="Age" placeholder="Age (18-100)" required>
 
-    <?php
-    if (isset($_POST["Age"])) {
-        $age = intval($_POST["Age"]);
-
-        if ($age >= 18 && $age <= 100) {
-            echo "Age is valid: $age";
-        } else {
-            echo "Invalid age entered. Please enter a valid age between 18 and 100.";
-        }
-      } 
-    else {
-        echo "Age not provided.";
-      }
-    ?>
+    <?php if (isset($_POST["Age"])) { ?>
+        <?php $age = intval($_POST["Age"]); ?>
+        <?php if ($age >= 18 && $age <= 100) { ?>
+          <?php echo "Age is valid: $age"; ?>
+        <?php } else { ?>
+          <?php echo "Invalid age entered. Please enter a valid age between 18 and 100."; } ?>
+        
+      <?php } else { ?>
+        <?php echo "Age not provided."; ?>
+      <?php } ?>
     <br><br>
 
     <p style="color:#9e029e; font-size: large; font-family: garamond;">How drunk are you?</p><br>
