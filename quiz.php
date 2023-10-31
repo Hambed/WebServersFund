@@ -66,7 +66,6 @@ if(isset($_POST["formpage"])) {
         $_SESSION["formpage"] = "FUCKFUCK";
 }
 else {
-  session_start();
   $_SESSION["formpage"] = "FUCK";
 }
 ?>
