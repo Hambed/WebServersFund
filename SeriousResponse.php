@@ -103,7 +103,7 @@ echo "<br><br>";
 $sql = "SELECT * FROM AlcoholicList WHERE Name = '$realname'";
 $result = mysqli_query($conn, $sql);
 foreach ($result as $row) {
-    echo "&nbps;id: {$row["id"]}&nbsp Name: {$row["Name"]}&nbsp BAC: {$row["BAC"]}&nbsp Age: {$row["Age"]}&nbsp Favorite Beverage {$row["FavoriteBeverage"]}<br>";
+    echo "&nbspid: {$row["id"]}&nbsp Name: {$row["Name"]}&nbsp BAC: {$row["BAC"]}&nbsp Age: {$row["Age"]}&nbsp Favorite Beverage {$row["FavoriteBeverage"]}<br>";
 }
 
 ?>
