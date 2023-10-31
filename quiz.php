@@ -5,12 +5,12 @@
 </head>
 <body style="background-color:black;">
     <h1 style="color:#9e029e; font-size: xxx-large; font-family: garamond;">Swear Down you tell truth</h1>
+    <?php $formpage = "nonSeriousResponse.php"; ?>
 <form action="<?php echo "$formpage"; ?>" method="POST" style="background-color: rgb(45, 189, 117);" onsubmit="return validateAge();">
   <fieldset>
     <legend>Your Precious Data:</legend>
 
     <label for="truthness">IS YOU FOR REAL RIGHT NOW</label><br>
-    <?php $formpage = "nonSeriousResponse.php"; ?>
     <input type="checkbox" id="truthness" name="truthness" value="Truthful" onblur="important()"><br>
     <p id="invisi" style="display:none">This field is required!</p>
     <br>
