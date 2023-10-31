@@ -61,15 +61,14 @@
 <?php 
 if(isset($_POST["formpage"])) {
     if($_POST["formpage"] == "Serious")
-        $formpage = "SeriousResponse.php";
+        $_SESSION["formpage"] = "SeriousResponse.php";
     else
-        $formpage = "nonSeriousResponse.php";
+        $_SESSION["formpage"] = "FUCKFUCK";
 }
 else {
-  $formpage = "nonSeriousResponse.php";
+  session_start();
+  $_SESSION["formpage"] = "FUCK";
 }
-echo "Form Page Value: " . $_POST["formpage"] . "<br>";
-echo "Selected Page: " . $formpage . "<br>";
 ?>
     <input type="submit">
   </fieldset>
