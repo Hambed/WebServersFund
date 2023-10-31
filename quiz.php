@@ -68,7 +68,7 @@
 <?php else { ?>
     <?php $formpage = "nonSeriousResponse.php"; ?>
 <?php } ?>
-
+<?php } ?>
     <input type="submit">
   </fieldset>
 </form>
