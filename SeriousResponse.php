@@ -33,7 +33,7 @@
     <?php echo"<br>{$_POST["Reflection"]}. "; ?>
     <?php echo"<br>Jeez if I thought you were sober enough to reflect that much I would have never asked."; ?>
     <?php echo"Form Page Value: " . $_POST["formpage"] . "<br>"; ?>
-    <?php echo "Selected Page: " . $formpage . ""; ?>
+    <?php echo "Selected Page: " . $BAC . ""; ?>
 </div>
 </body>
 </html>
