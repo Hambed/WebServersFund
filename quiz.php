@@ -22,6 +22,20 @@
     <label for="Age">Your Age:</label><br>
     <input type="text" id="Age" name="Age" placeholder="Age (18-100)" required>
 
+    <?php
+    if (isset($_POST["Age"])) {
+        $age = intval($_POST["Age"]);
+
+        if ($age >= 18 && $age <= 100) {
+            echo "Age is valid: $age";
+        } else {
+            echo "Invalid age entered. Please enter a valid age between 18 and 100.";
+        }
+      } 
+    else {
+        echo "Age not provided.";
+      }
+    ?>
     <br><br>
 
     <p style="color:#9e029e; font-size: large; font-family: garamond;">How drunk are you?</p><br>
@@ -54,7 +68,7 @@
         <label for="BAC">BAC 0.40% + &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Onset of coma, possible death due to respiratory arrest.</label><br><br>
 
     <label for="Reflection" style="color:#9e029e; font-size: large; font-family: garamond;">Write a short reflection on how ashamed you are for being drunk.</label><br>
-    <textarea name="Reflection" rows="20" cols="30" pattern=".{250,}" title="refy" required></textarea>
+    <textarea name="Reflection" id="Reflection" rows="20" cols="30" pattern=".{25,}" title="refy" required></textarea>
 
     <br><br>
     <input type="submit">
