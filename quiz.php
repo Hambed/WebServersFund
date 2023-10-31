@@ -94,5 +94,20 @@
         }
     });
 </script>
+<script>
+        function checkForSpaces() {
+            // Get the input value
+            var inputText = document.getElementById("beverage");
+
+            // Check if the input contains spaces
+            if (inputText.includes(" ")) {
+                alert("Input contains spaces. Please remove spaces.");
+                return false;
+            }
+            else {
+              return true;
+            }
+        }
+    </script>
 </body>
 </html>
