@@ -5,7 +5,7 @@
 </head>
 <body style="background-color:black;">
     <h1 style="color:#9e029e; font-size: xxx-large; font-family: garamond;">Swear Down you tell truth</h1>
-<form action="form.php" method="POST" style="background-color: rgb(45, 189, 117);" onsubmit="return validateAge();">
+<form action="<?php echo $formpage; ?>" method="POST" style="background-color: rgb(45, 189, 117);" onsubmit="return validateAge();">
   <fieldset>
     <legend>Your Precious Data:</legend>
 
@@ -21,18 +21,7 @@
     <input type="text" id="realname" name="realname" value="" required><br>
     <label for="Age">Your Age:</label><br>
     <input type="text" id="Age" name="Age" placeholder="Age (18-100)" required>
-
-    <?php if (isset($_POST["Age"])) { ?>
-        <?php $age = intval($_POST["Age"]); ?>
-        <?php if ($age >= 18 && $age <= 100) { ?>
-          <?php echo "Age is valid: $age"; ?>
-        <?php } else { ?>
-          <?php echo "Invalid age entered. Please enter a valid age between 18 and 100."; } ?>
-      <?php } else { ?>
-        <?php echo "Age not provided."; ?>
-      <?php } ?>
     <br><br>
-
     <p style="color:#9e029e; font-size: large; font-family: garamond;">How drunk are you?</p><br>
 
         <input type="radio" id="BAC" name="BAC" value="1">
@@ -66,14 +55,94 @@
     <textarea name="Reflection" id="Reflection" rows="20" cols="30" pattern=".{25,}" title="refy" required></textarea>
 
     <br><br>
+    <label for="formpage">Check the box if you are Serious... Like really Serious.</label><br>
+    <input type="checkbox" id="formpage" name="formpage" value="Serious"><br>
+<?php 
+if(isset($_POST["formtype"])) {
+    if($_POST["formpage"] == "Serious")
+        $formpage = "SeriousResponse.php";
+    else
+        $formpage = "nonSeriousResponse.php";
+}
+else {
+  $formpage = "nonSeriousResponse.php";
+}
+?>
     <input type="submit">
   </fieldset>
 </form>
+
+<?php if (isset($_POST["Age"])) { ?>
+    <?php $age = intval($_POST["Age"]); ?>
+    <?php if ($age >= 18 && $age <= 100) { ?>
+      <?php echo "Age is valid: $age"; ?>
+    <?php } else { ?>
+      <?php echo "Invalid age entered. Please enter a valid age between 18 and 100."; } ?>
+  <?php } else { ?>
+    <?php echo "Age not provided."; ?>
+  <?php } ?>
+
+<?php
+    if (isset($_POST["realname"])) {
+        $realname = $_POST["realname"];
+
+        if (strpos($realname, ' ') === false) {
+            // No spaces found in the input string
+            echo "The input string does not contain any spaces.";
+        } else {
+            // Spaces found in the input string
+            echo "The input string contains spaces.";
+        }
+    else {
+        echo "Input string not provided.";
+    }
+}
+?>
+
+<?php
+    if (isset($_POST["BAC"])) {
+        $BAC = intval($_POST["BAC"]);
+
+        switch ($BAC) {
+          case 1:
+           
+            break;
+          case 2:
+           
+            break;
+          case 3:
+           
+            break;
+          case 4:
+           
+            break;
+          case 5:
+           
+            break;
+          case 6:
+           
+            break;
+          case 7:
+           
+            break;
+          case 8:
+           
+            break;
+          case 9:
+           
+            break;
+          default:
+            echo "Not Valid Answer";
+        }
+    }
+    else {
+      echo "No Answer Provided";
+    }
+?>
 <script>
   function important() {
     document.getElementById('invisi').style.display='block';
   }
-  
 </script>
 <script>
   function validateAge() {

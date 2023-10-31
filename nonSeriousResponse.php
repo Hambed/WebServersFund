@@ -3,7 +3,7 @@
 <style>
     .DivMessage {
         border: 1px outset rgb(0, 13, 88);
-        background-color: rgb(255, 0, 255);
+        background-color: rgb(45, 189, 117);
         text-align: left;
     }
 </style>
