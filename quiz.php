@@ -58,21 +58,6 @@
     <br><br>
     <label for="formpage">Check the box if you are Serious... Like really Serious.</label><br>
     <input type="checkbox" id="formpage" name="formpage" value="Serious"><br>
-
-<?php
-if(isset($_POST["formpage"])) {
-    if($_POST["formpage"] == "Serious") {
-         $formpage = "SeriousResponse.php"; 
-    }
-    else {
-         $formpage = "nonSeriousResponse.php";
-    }
-  }
-  else {
-    $formpage = "nonSeriousResponse.php";
- }
-
-?>
     <input type="submit">
   </fieldset>
 </form>
@@ -167,6 +152,18 @@ else {
 
       return true;
   }
+</script>
+<script>
+    var formpageCheckbox = document.getElementById("formpage");
+    var formActionField = document.getElementById("formAction");
+
+    formpageCheckbox.addEventListener("change", function() {
+        if (formpageCheckbox.checked) {
+            formActionField.value = "SeriousResponse.php";
+        } else {
+            formActionField.value = "nonSeriousResponse.php";
+        }
+    });
 </script>
 </body>
 </html>
