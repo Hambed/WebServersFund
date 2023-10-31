@@ -28,7 +28,6 @@
           <?php echo "Age is valid: $age"; ?>
         <?php } else { ?>
           <?php echo "Invalid age entered. Please enter a valid age between 18 and 100."; } ?>
-        
       <?php } else { ?>
         <?php echo "Age not provided."; ?>
       <?php } ?>
