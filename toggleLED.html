@@ -17,6 +17,7 @@
     <input type="checkbox" id="LED_Logic" name="LED_Logic" value="on">
     <h id="LED_status" style="color:#9e029e; font-size: xxx-large; font-family: garamond;">LED status: </h>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#LED_Logic').on('change', function() {
@@ -28,6 +29,8 @@
                 type: 'POST',
                 url: 'Control_LED.php',
                 data: { logic: logic },
+                success: function(response) {
+                    console.log('LED control command sent successfully');}
             });
         });
     });
