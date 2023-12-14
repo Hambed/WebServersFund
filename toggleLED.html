@@ -19,6 +19,8 @@
 <div class="DivMessage">
     <input type="checkbox" id="LED_Logic" name="LED_Logic" value="on">
     <h id="LED_status" style="color:#9e029e; font-size: xxx-large; font-family: garamond;">LED status: <br></h>
+</div>
+<div class="DivMessage">
     <h id="sensorData" style="color:#9e029e; font-size: xxx-large; font-family: garamond;">Sensor Data:<br>Temperature = <br>Pressure = <br>Altitude = <br></h>
     <button id="updateDataBtn">Update</button>
 </div>
@@ -44,11 +46,11 @@
                 type: 'GET',
                 url: 'BME280_Data.php',
                 success: function(response) {
-                    var sensorValues = response.split('<br>');
+                    var sensorValues = response.split(',');
                     $('#sensorData').html('Sensor Data:<br>' +
-                        'Temperature = ' + sensorValues[1] + '<br>' +
-                        'Pressure = ' + sensorValues[2] + '<br>' +
-                        'Altitude = ' + sensorValues[3] + '<br>');
+                        'Temperature = ' + sensorValues[0] + '<br>' +
+                        'Pressure = ' + sensorValues[1] + '<br>' +
+                        'Altitude = ' + sensorValues[2] + '<br>');
                 },
                 error: function() {
                     $('#sensorData').html('Error fetching sensor data.');
