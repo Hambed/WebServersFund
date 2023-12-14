@@ -48,9 +48,9 @@
                 success: function(response) {
                     var sensorValues = response.split(',');
                     $('#sensorData').html('Sensor Data:<br>' +
-                        'Temperature = ' + sensorValues[0] + '<br>' +
-                        'Pressure = ' + sensorValues[1] + '<br>' +
-                        'Altitude = ' + sensorValues[2] + '<br>');
+                        'Temperature = ' + sensorValues[1] + '<br>' +
+                        'Pressure = ' + sensorValues[2] + '<br>' +
+                        'Altitude = ' + sensorValues[3] + '<br>');
                 },
                 error: function() {
                     $('#sensorData').html('Error fetching sensor data.');
