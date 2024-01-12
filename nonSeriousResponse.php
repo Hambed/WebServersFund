@@ -3,7 +3,7 @@
 <style>
     .DivMessage {
         border: 1px outset rgb(0, 13, 88);
-        background-color: rgb(255, 0, 255);
+        background-color: rgb(45, 189, 117);
         text-align: left;
     }
 </style>
@@ -31,7 +31,7 @@
         <?php echo"it's fucking incredible that someone in your state can move a mouse and read a form because you're so drunk you're bouta die. "; ?>
         <?php } ?>
     <?php echo"\n{$_POST["Reflection"]}. "; ?>
-    <?php echo"\nJeez if I though you were sober enough to reflect that much I would have never asked."; ?>
+    <?php echo"\nJeez if I thought you were sober enough to reflect that much I would have never asked."; ?>
 </div>
 </body>
 </html>

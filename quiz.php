@@ -5,7 +5,7 @@
 </head>
 <body style="background-color:black;">
     <h1 style="color:#9e029e; font-size: xxx-large; font-family: garamond;">Swear Down you tell truth</h1>
-<form action="form.php" method="POST" style="background-color: rgb(45, 189, 117);" onsubmit="return validateAge();">
+<form action="nonSeriousResponse.php" method="POST" style="background-color: rgb(45, 189, 117);" onsubmit="return validateAge();">
   <fieldset>
     <legend>Your Precious Data:</legend>
 
@@ -21,9 +21,7 @@
     <input type="text" id="realname" name="realname" value="" required><br>
     <label for="Age">Your Age:</label><br>
     <input type="text" id="Age" name="Age" placeholder="Age (18-100)" required>
-
     <br><br>
-
     <p style="color:#9e029e; font-size: large; font-family: garamond;">How drunk are you?</p><br>
 
         <input type="radio" id="BAC" name="BAC" value="1">
@@ -54,17 +52,21 @@
         <label for="BAC">BAC 0.40% + &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Onset of coma, possible death due to respiratory arrest.</label><br><br>
 
     <label for="Reflection" style="color:#9e029e; font-size: large; font-family: garamond;">Write a short reflection on how ashamed you are for being drunk.</label><br>
-    <textarea name="Reflection" rows="20" cols="30" pattern=".{250,}" title="refy" required></textarea>
-
+    <textarea name="Reflection" id="Reflection" rows="20" cols="30" pattern=".{25,}" title="refy" required></textarea>
     <br><br>
+    <label for="beverage">Your Favorite Alcoholic Beverage</label><br>
+    <input type="text" id="beverage" name="beverage" required>
+    <br><br>
+    <label for="formpage">Check the box if you are Serious... Like really Serious.</label><br>
+    <input type="checkbox" id="formpage" name="formpage" value="Serious"><br>
     <input type="submit">
   </fieldset>
 </form>
+
 <script>
   function important() {
     document.getElementById('invisi').style.display='block';
   }
-  
 </script>
 <script>
   function validateAge() {
@@ -80,5 +82,32 @@
       return true;
   }
 </script>
+<script>
+    var formpageCheckbox = document.getElementById("formpage");
+    var formElement = document.querySelector("form");
+
+    formpageCheckbox.addEventListener("change", function() {
+        if (formpageCheckbox.checked) {
+            formElement.action = "SeriousResponse.php";
+        } else {
+            formElement.action = "nonSeriousResponse.php";
+        }
+    });
+</script>
+<script>
+        function checkForSpaces() {
+            // Get the input value
+            var inputText = document.getElementById("beverage");
+
+            // Check if the input contains spaces
+            if (inputText.includes(" ")) {
+                alert("Input contains spaces. Please remove spaces.");
+                return false;
+            }
+            else {
+              return true;
+            }
+        }
+    </script>
 </body>
 </html>

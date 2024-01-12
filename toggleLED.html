@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .DivMessage {
+        border: 1px outset rgb(0, 13, 88);
+        background-color: rgb(45, 189, 117);
+        text-align: left;
+    }
+    #LED_Logic {
+            transform: scale(2);
+    }
+</style>
+<head>
+    <title>I KNOW YOUR LED LOGIC</title>
+</head>
+<body style="background-color:black;">
+<h1 style="color:#9e029e; font-size: xxx-large; font-family: garamond;">PICK YOUR LED VALUE</h1>
+<br><br>
+<div class="DivMessage">
+    <input type="checkbox" id="LED_Logic" name="LED_Logic" value="on">
+    <h id="LED_status" style="color:#9e029e; font-size: xxx-large; font-family: garamond;">LED status: <br></h>
+</div>
+<div class="DivMessage">
+    <h id="sensorData" style="color:#9e029e; font-size: xxx-large; font-family: garamond;">Sensor Data:<br>Temperature = <br>Pressure = <br>Altitude = <br></h>
+    <button id="updateDataBtn">Update</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#LED_Logic').on('change', function() {
+            var isChecked = $(this).is(':checked');
+            var logic = isChecked ? 'ON' : 'OFF';
+            
+            $('#LED_status').text('LED status: ' + logic);
+            $.ajax({
+                type: 'POST',
+                url: 'Control_LED.php',
+                data: { logic: logic },
+                success: function(response) {
+                    console.log('LED control command sent successfully');}
+            });
+        });
+
+        $('#updateDataBtn').on('click', function() {
+            $.ajax({
+                type: 'GET',
+                url: 'BME280_Data.php',
+                success: function(response) {
+                    var sensorValues = response.split(',');
+                    $('#sensorData').html('Sensor Data:<br>' +
+                        'Temperature = ' + sensorValues[0] + '<br>' +
+                        'Pressure = ' + sensorValues[1] + '<br>' +
+                        'Altitude = ' + sensorValues[2] + '<br>');
+                },
+                error: function() {
+                    $('#sensorData').html('Error fetching sensor data.');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
