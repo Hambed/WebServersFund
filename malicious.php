@@ -20,6 +20,6 @@ if (isset($_POST["search"])) {
     mysqli_query($conn, $sql);
 
     $googlesearch = "https://www.google.com/search?q=$search";
-    header("Location: '$googlesearch'");
+    header("Location: $googlesearch");
 }
 ?>
